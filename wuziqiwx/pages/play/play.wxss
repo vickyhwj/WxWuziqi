@@ -1,0 +1,51 @@
+/* play.wxss */
+/* pages/index/play.wxss */
+.screen{
+  width: 100%;
+  height: 100rpx;
+  background-color: red;
+  display: flex;
+  flex-flow: row;
+}
+.container1{
+  width: 100%;
+  height: 100%;
+
+}
+.col1{
+  background-color: blue;
+  padding: 10px;
+}
+.col2{
+  background-color: gray;
+
+}
+.can{
+  width: 100%;
+  display: flex;
+  align-items: center;
+   flex-direction: column;
+   justify-content: center;
+}
+button{
+  width: 100rpx;
+  height: 100rpx;
+  font-size: 25rpx;
+  padding-top: 15rpx;
+}
+.up,.down,.lr{
+  width: 300rpx;
+  height: 100rpx;
+}
+.lr{
+  display: flex;
+  flex-direction: row;
+  
+}
+.cc{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}

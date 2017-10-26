@@ -1,0 +1,30 @@
+<!--pages/list/list.wxml-->
+<scroll-view>
+<view class="container1">
+  <view  wx:for="{{userids}}" class="list" >
+   <button bindtap="xx" data-name="{{item.userid}}"> {{item.userid}}</button>
+  </view>
+  <button bindtap="tap" class="list">{{name}}</button>
+</view>
+<view class="classname" style="display:{{d1}}">
+  <image src="../img/a1.jpeg" ></image>
+
+</view>
+<view class="classname" style="display:{{d2}}">
+  <image src="../img/a2.jpg" ></image>
+
+</view>
+<view class="classname" style="display:{{d3}}">
+  <image src="../img/a3.jpg" ></image>
+
+</view>
+<view class="classname" wx:for="{{[1,2,3,4,5,6,72,2,2,2,2,2,2,2,2,2,2]}}">
+  {{item}}
+</view>
+</scroll-view>
+<view class="bu_group" >
+  <view class="vv"><image src="{{src1}}" bindtap="dd" data-name="1"></image> </view>
+  <view class="vv"><image src="{{src2}}" bindtap="dd" data-name="2"></image> </view>
+  <view class="vv"><image src="{{src3}}" bindtap="dd" data-name="3"></image> </view>
+
+</view>

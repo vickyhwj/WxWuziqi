@@ -1,0 +1,232 @@
+/* pages/userList/userList.wxss */
+Page{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 60rpx;
+  height: 100%;
+}
+
+.form{
+  display: flex;
+  flex-direction: row;
+  
+}
+.section{
+  float: left;
+  width: 540rpx;
+  
+  height: 70rpx;
+  border-bottom:10rpx solid black; 
+  margin-left: 10rpx;
+}
+.btn-area{
+  width: 200rpx;
+  float: left;
+  height: 80rpx;
+  padding-bottom: 10rpx;
+}
+.btn-area>button{
+  width: 100%;
+  height: 80%;
+}
+.diving{
+  margin-top: 10rpx;
+  width: 100%;
+  height: 5rpx;
+  background-color: gray;
+}
+.footer{
+  border-top: 5rpx solid gainsboro;
+  background: white;
+  width: 100%;
+  height: 140rpx;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.footer>view{
+  height: 120rpx;
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+.footer image{
+  width: 110rpx;
+  height:110rpx;
+}
+.item{
+  border-bottom: 1rpx solid gainsboro;
+  height: 135rpx;
+}
+.item-img{
+  width:130rpx;
+  height: 130rpx; 
+  float: left;
+}
+.item-img>image{
+  width:100%;
+  height: 100%; 
+}
+.item-infor{
+  float: right;
+  width: 600rpx;
+}
+.item-name,.item-wf{
+  padding-top: 15rpx;
+  text-align: right;
+  padding-right:100rpx; 
+  font-size: 40rpx;
+  font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.userLoginForm{
+  width: 100%;
+  height: 300rpx;
+  /* display: block; */
+  margin-top: 300rpx;
+
+}
+
+.username,.password,.loginBu{
+  width: 80%;
+  height: 100rpx;
+  margin-bottom: 10rpx;
+  margin: auto;
+  margin-top: 10rpx;
+}
+.username,.password{
+  background-color: whitesmoke;
+  height: 100rpx;
+}
+.myInfor{
+  width: 100%;
+  height: 220rpx;
+  background-color: white;
+}
+.myLogo{
+  float: left;
+  height: 200rpx;
+  width: 200rpx;
+}
+.myLogo>image{
+  width: 100%;
+  height: 100%;
+}
+.userid{
+  text-align: right;
+  padding-right: 20rpx;
+  border-bottom: 5rpx solid gainsboro;
+  padding-bottom: 20rpx;
+}
+.user-right{
+  float: left;
+  width: 500rpx;
+  height: 100%;
+  font-family:  'Times New Roman', Times, serif
+  
+}
+.wf{
+  text-align: right;
+  padding-top: 20rpx;
+}
+.myFriend{
+  width: 100%;
+  height: 120rpx;
+  border-top: 3rpx solid gray;
+}
+.myFriend view{
+  font-size: 50rpx;
+  font-family:  Cambria, Cochin, Georgia, Times, Times New Roman, serif
+}
+.myFriendLogo{
+  width: 120rpx;
+  height:120rpx;
+  float: left;
+}
+.myFriendLogo>image{
+  width: 100%;
+  height: 100%;
+}
+.myFriendInfor{
+  float: left;
+  height: 120rpx;
+  width: 450rpx;
+}
+.myFriendId{
+  width: 100%;
+  text-align: right;
+  border-bottom: 2rpx solid blanchedalmond;
+}
+.del{
+  height: 120rpx;
+  width: 120rpx;
+  float: left;
+  background-color: red;
+  margin-left: 20rpx;
+  text-align: center;
+  vertical-align: middle;
+  background: url('../img/del.png') no-repeat;
+  background-size: 120rpx;
+
+}
+.myFriendwf{
+  text-align: right;
+}
+.msglist{
+  width: 100%;
+  overflow: auto
+}
+.msgitem1{
+  float: left;
+  height: 210rpx;
+  width: 100%;
+  border-bottom: 2rpx solid gainsboro;
+}
+.msg-del{
+  width: 100%;
+  height: 120rpx;
+}
+.msg1{
+  float: left;
+  margin-top:30rpx; 
+  width: 500rpx;
+  font-size: 50rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+   
+}
+.cf{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+.confirmview{
+  width: 45%;
+  height: 100%;
+  margin-right: 5%;
+  text-align: center;
+  background-color: gainsboro;
+  
+}
+.refuseview{
+  width: 45%;
+  height: 100%;
+  text-align: center;
+    background-color: gainsboro;
+
+}
+.msgitem2{
+  width: 100%;
+  height: 120rpx;
+  border-bottom: 2rpx solid gainsboro;
+}

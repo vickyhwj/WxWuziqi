@@ -1,0 +1,35 @@
+<view style="background:url(../img/muwen.jpg);height:100%">
+  <view class="show" bindtap="show" bindlongtap="back">
+    <image src="../img/button.png"></image>
+  </view>
+  <view class="qipan">
+    <canvas style="width: 300px; height: 300px;" canvas-id="firstCanvas" />
+  </view>
+  <view class="friendlist" hidden="{{friendlistHidden}}">
+    <view class="" wx:for="{{friendlist}}" wx:for-item="keyword">
+    
+      <view wx:if="{{keyword.online==true}}" class="online" bindtap="yaoqing" data-name="{{keyword.userid}}">
+      {{keyword.userid}}
+        <image src="../img/online.png" class="onlineimg"></image>
+      </view>
+      <view wx:if="{{!keyword.online}}">
+        <view class="offline">{{keyword.userid}}</view>
+      </view>
+    </view>
+  </view>
+  <modal hidden="{{hidden}}" title="message" confirm-text="同意" cancel-text="拒绝" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}">
+    来自{{from}}的邀请
+  </modal>
+  <view class="btn-group">
+
+    <button bindtap="dir" data-name="0" class="up" ></button>
+    <view class="btn-lgr">
+      <button bindtap="dir" data-name="2"></button>
+      <button bindtap="go" type="warn"></button>
+      <button bindtap="dir" data-name="3"></button>
+    </view>
+    <view class="classname">
+      <button bindtap="dir" data-name="1" class="down"></button>
+    </view>
+  </view>
+</view>

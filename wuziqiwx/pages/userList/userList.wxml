@@ -1,0 +1,182 @@
+<!--pages/userList/userList.wxml-->
+<view style="display:{{pageGame}};padding-top:300rpx;">
+  <button bindtap="single">人机</button>
+  <button bindtap="pk">联机</button>
+</view>
+
+<view style="display:{{pageFriend}}">
+
+  <form bindsubmit="formSubmit" bindreset="formReset" class="form">
+
+
+    <view class="section">
+
+      <input name="input" placeholder="{{app.userInfor}}" bindblur="inputBlur" />
+    </view>
+
+
+    <view class="btn-area">
+      <button formType="submit" bindtap="search" style="padding-bottom:100rpx;">search</button>
+
+    </view>
+  </form>
+  <view class="diving"></view>
+  <scroll-view class="sv" bindscrolltolower="xiala" bindscrolltoupper="up" scroll-y="{{scrolly}}" style="height:950rpx;">
+
+
+    <view class="item" wx:for="{{list}}">
+      <view class="classname" style="width:100%;height:100%" bindtap="yaoqing" data-name="{{item.userid}}">
+        <view class="item-img">
+          <image src="../img/kefu.png"></image>
+        </view>
+
+        <view class="item-infor">
+          <view class="item-name">
+            {{item.userid}}
+          </view>
+          <view class="item-wf">
+            {{item.win}}:胜 {{item.fail}}:负
+          </view>
+        </view>
+      </view>
+
+
+    </view>
+    <view class="classname" hidden="{{loading}}">
+      loading
+    </view>
+  </scroll-view>
+</view>
+
+<view style="display:{{pageKefu}};">
+  <view class="userLoginForm" hidden="{{loginHidden}}">
+    <form bindsubmit="userSubmit" class="userLoginForm">
+      <input type="text" class="username" name="username" />
+      <input type="password" class="password" name="password" />
+      <button form-type="submit" class="loginBu">login</button>
+    </form>
+  </view>
+</view>
+
+
+<view style="display:{{pageKefu}}">
+  <scroll-view class="classname" hidden="{{userInforHidden}}" 
+  style="height:1000rpx;" scroll-y="true">
+    <view class="myInfor">
+      <view class="myLogo">
+        <image src="../img/kefu.png"></image>
+      </view>
+      <view class="user-right">
+        <view class="userid">
+         userid:{{userid}}
+        </view>
+        <view class="wf">
+        win:{{win}} fail:{{fail}}
+        </view>
+      </view>
+    
+    
+    </view>
+      
+    <button bindtap="outLogin" >outlogin</button>
+    <view style="color:red;font-size:40rpx;">好友:</view>
+    <view class="myFriend" wx:for="{{friendlist}}">
+      <view class="myFriendLogo">
+        <image src="../img/kefu1.png"></image>
+      </view>
+      <view class="myFriendInfor">
+        <view class="myFriendId">
+          {{item.userid}}
+        </view>
+        <view class="myFriendwf">
+          win:{{item.win}} fail:{{item.fail}}
+        </view>
+      </view>
+      <view class="del" bindtap="deleteRelationship" data-name="{{item.userid}}"></view>
+      
+      
+    </view>
+  </scroll-view>
+</view>
+
+
+
+
+
+<view style="display:{{pageMessage}}">
+  <scroll-view scroll-y="true" style="height:1000rpx;">
+  <view class="msglist" wx:for="{{messages}}" >
+    <view class="msgitem1" wx:if="{{item.type==1}}">
+      <view class="msg-del">
+        <view class="msg1">
+          from{{item.from}}的请求
+        </view>
+        <view class="del" bindtap="deleteMsg" data-msgid="{{item.msgId}}"></view>
+      
+      </view>
+      <view class="cf">
+        <view class="confirmview" bindtap="confirm" data-from="{{item.from}}" data-msgid="{{item.msgId}}">
+          yes
+        </view>
+        <view class="refuseview" bindtap="refuse" data-from="{{item.from}}" data-msgid="{{item.msgId}}">
+          no
+        </view>
+      </view>
+
+      <!-- <button bindtap="confirm" data-from="{{item.from}}" data-msgid="{{item.msgId}}">yse</button>
+      <button bindtap="refuse" data-from="{{item.from}}" data-msgid="{{item.msgId}}">no</button>
+      <button bindtap="deleteMsg" data-msgid="{{item.msgId}}">x</button> -->
+    </view>
+    <view class="msgitem2" wx:if="{{item.type==2}}">  
+      <view class="msg1">
+      {{item.from}}同意了你
+      </view>
+      <view bindtap="deleteMsg" data-msgid="{{item.msgId}}" class="del">x</view>
+    </view>
+    <view class="msgitem2" wx:if="{{item.type==3}}">
+      <view class="msg1">
+      {{item.from}}拒绝了你
+      </view>
+      <view  bindtap="deleteMsg" data-msgid="{{item.msgId}}" class="del">x</view>
+    </view>
+  </view>
+  </scroll-view>
+
+</view>
+
+
+
+
+
+<view class="footer">
+  <view class="classname" wx:if="{{!imgGame}}" data-name="0" bindtap="change">
+    <image src="../img/game.png"></image>
+  </view>
+  <view class="classname" wx:if="{{imgGame}}" data-name="0" bindtap="change">
+    <image src="../img/game1.png"></image>
+  </view>
+
+  <view class="classname" wx:if="{{!imgFriend}}" data-name="1" bindtap="change">
+    <image src="../img/friend.png"></image>
+  </view>
+  <view class="classname" wx:if="{{imgFriend}}" data-name="1" bindtap="change">
+    <image src="../img/friend1.png"></image>
+  </view>
+
+  <view class="classname" wx:if="{{!imgMessage}}" data-name="2" bindtap="change">
+    <image src="../img/message.png"></image>
+  </view>
+  <view class="classname" wx:if="{{imgMessage}}" data-name="2" bindtap="change">
+    <image src="../img/message1.png"></image>
+  </view>
+
+
+  <view class="classname" wx:if="{{!imgKefu}}" data-name="3" bindtap="change">
+    <image src="../img/kefu.png"></image>
+  </view>
+  <view class="classname" wx:if="{{imgKefu}}" data-name="3" bindtap="change">
+    <image src="../img/kefu1.png"></image>
+  </view>
+
+
+</view>

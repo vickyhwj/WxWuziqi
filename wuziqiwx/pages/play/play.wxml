@@ -1,0 +1,22 @@
+<!--play.wxml-->
+
+<view class="can">
+<canvas style="width: 300px; height: 300px;" canvas-id="firstCanvas">
+</canvas>
+
+</view>
+<view class="cc">
+<view class="controll">
+  <view class="up" bindtap="up">
+    <button >up</button>
+  </view>
+  <view class="lr">
+    <button bindtap="left">left</button>
+    <button bindtap="tap">go</button>
+    <button bindtap="right">right</button>
+  </view>
+  <view class="down">
+    <button bindtap="down">down</button>
+  </view>
+</view>
+</view>
